@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="maze_world">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <scene>
+      <ambient>1.0 1.0 1.0 1.0</ambient>
+      <background>0.75 0.80 0.85 1.0</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 15 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <direction>-0.4 0.2 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><plane><normal>0 0 1</normal></plane></geometry></collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>30 30</size></plane></geometry>
+          <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Start Pad (Blue: X=1.0, Y=11.0) & Goal Pad (Green: X=11.0, Y=1.0) -->
+    <model name="start_pad">
+      <static>true</static><pose>1.0 11.0 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>1.4 1.4 0.01</size></box></geometry><material><ambient>0.1 0.4 0.95 1</ambient><diffuse>0.1 0.4 0.95 1</diffuse></material></visual></link>
+    </model>
+    <model name="goal_pad">
+      <static>true</static><pose>11.0 1.0 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>1.4 1.4 0.01</size></box></geometry><material><ambient>0.1 0.9 0.2 1</ambient><diffuse>0.1 0.9 0.2 1</diffuse></material></visual></link>
+    </model>
+
+    <!-- Outer Boundary (12.0 x 12.0m) -->
+    <model name="outer_N"><static>true</static><pose>6.0 12.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>12.12 0.12 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>12.12 0.12 0.6</size></box></geometry><material><ambient>0.15 0.15 0.2 1</ambient><diffuse>0.2 0.2 0.25 1</diffuse></material></visual></link></model>
+    <model name="outer_S"><static>true</static><pose>6.0 0.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>12.12 0.12 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>12.12 0.12 0.6</size></box></geometry><material><ambient>0.15 0.15 0.2 1</ambient><diffuse>0.2 0.2 0.25 1</diffuse></material></visual></link></model>
+    <model name="outer_W"><static>true</static><pose>0.0 6.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>12.12 0.12 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>12.12 0.12 0.6</size></box></geometry><material><ambient>0.15 0.15 0.2 1</ambient><diffuse>0.2 0.2 0.25 1</diffuse></material></visual></link></model>
+    <model name="outer_E"><static>true</static><pose>12.0 6.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>12.12 0.12 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>12.12 0.12 0.6</size></box></geometry><material><ambient>0.15 0.15 0.2 1</ambient><diffuse>0.2 0.2 0.25 1</diffuse></material></visual></link></model>
+
+    <!--
+      6x6 CELL LABYRINTH (Each cell is 2m x 2m):
+      True Path:
+      Start(1,11) -> East to (5,11) -> South to (5,9) -> West to (1,9) -> South to (1,5)
+      -> East to (7,5) -> North to (7,9) -> East to (11,9) -> South to (11,5)
+      -> West to (9,5) -> South to (9,1) -> East to GOAL (11,1)!
+      Plus 4 open Dead-End Branches to test Frontier/A* Exploration!
+    -->
+
+    <!-- Horizontal Internal Walls -->
+    <!-- Y = 10.0: X from 0 to 4 (blocks direct south from start, forces East to X=5) -->
+    <model name="h_y10_1"><static>true</static><pose>2.0 10.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- Y = 10.0: X from 8 to 10 (creates top-right dead-end branch) -->
+    <model name="h_y10_2"><static>true</static><pose>9.0 10.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+    <!-- Y = 8.0: X from 2 to 6 (guides path West to X=1) -->
+    <model name="h_y8_1"><static>true</static><pose>4.0 8.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- Y = 8.0: X from 8 to 10 (guides path around top-right loop) -->
+    <model name="h_y8_2"><static>true</static><pose>9.0 8.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+    <!-- Y = 6.0: X from 2 to 6 (separates upper and middle corridors) -->
+    <model name="h_y6_1"><static>true</static><pose>4.0 6.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+    <!-- Y = 4.0: X from 0 to 8 (long lower barrier forcing robot up through X=7) -->
+    <model name="h_y4_1"><static>true</static><pose>4.0 4.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>8.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>8.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- Y = 4.0: X from 10 to 12 (forces turn into X=9 corridor toward goal) -->
+    <model name="h_y4_2"><static>true</static><pose>11.0 4.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+    <!-- Y = 2.0: X from 2 to 6 (bottom-left exploration corridor) -->
+    <model name="h_y2_1"><static>true</static><pose>4.0 2.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- Y = 2.0: X from 10 to 12 (funnels into final Goal cell at 11,1) -->
+    <model name="h_y2_2"><static>true</static><pose>11.0 2.0 0.3 0 0 0</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+    <!-- Vertical Internal Walls -->
+    <!-- X = 6.0: Y from 6 to 10 (central spine wall) -->
+    <model name="v_x6_1"><static>true</static><pose>6.0 8.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- X = 8.0: Y from 10 to 12 (separates top-left start path from top-right branch) -->
+    <model name="v_x8_1"><static>true</static><pose>8.0 11.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- X = 8.0: Y from 4 to 8 (eastern inner divider) -->
+    <model name="v_x8_2"><static>true</static><pose>8.0 6.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>4.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>4.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- X = 8.0: Y from 0 to 2 (blocks bottom-left dead-end from goal) -->
+    <model name="v_x8_3"><static>true</static><pose>8.0 1.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+    <!-- X = 10.0: Y from 6 to 8 (right corridor chicane) -->
+    <model name="v_x10_1"><static>true</static><pose>10.0 7.0 0.3 0 0 1.5708</pose><link name="l"><collision name="c"><geometry><box><size>2.0 0.10 0.6</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 0.10 0.6</size></box></geometry><material><ambient>0.65 0.2 0.15 1</ambient><diffuse>0.75 0.25 0.2 1</diffuse></material></visual></link></model>
+
+  </world>
+</sdf>

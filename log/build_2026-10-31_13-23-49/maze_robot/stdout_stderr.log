@@ -1,0 +1,27 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/rviz.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/slam.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/solve_maze.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/spawn.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/urdf/maze_robot.urdf.xacro
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/worlds/maze_world.sdf
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/config/maze_params.yaml
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/config/slam_params.yaml
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/rviz/maze_view.rviz
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/lib/maze_robot/maze_solver.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/package_run_dependencies/maze_robot
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/parent_prefix_path/maze_robot
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/path.sh
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/path.dsv
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.bash
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.sh
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.zsh
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.dsv
+-- Symlinking: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/package.dsv
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/packages/maze_robot
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/cmake/maze_robotConfig.cmake
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/cmake/maze_robotConfig-version.cmake
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/package.xml

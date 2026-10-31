@@ -1,0 +1,19 @@
+[0.011s] Invoking command in '/home/ghilesu/maze_ws/build/maze_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ghilesu/maze_ws/build/maze_robot -- -j12 -l12
+[0.044s] Invoked command in '/home/ghilesu/maze_ws/build/maze_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ghilesu/maze_ws/build/maze_robot -- -j12 -l12
+[0.052s] Invoking command in '/home/ghilesu/maze_ws/build/maze_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ghilesu/maze_ws/build/maze_robot
+[0.061s] -- Install configuration: ""
+[0.061s] -- Execute custom install script
+[0.061s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/rviz.launch.py
+[0.061s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/slam.launch.py
+[0.061s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/spawn.launch.py
+[0.061s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/urdf/maze_robot.urdf.xacro
+[0.061s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/worlds/maze_world.sdf
+[0.061s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:105 (message):
+[0.061s]   ament_cmake_symlink_install_directory() can't find
+[0.062s]   '/home/ghilesu/maze_ws/src/maze_robot/meshes'
+[0.062s] Call Stack (most recent call first):
+[0.062s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:319 (ament_cmake_symlink_install_directory)
+[0.062s]   cmake_install.cmake:46 (include)
+[0.062s] 
+[0.062s] [0m
+[0.063s] Invoked command in '/home/ghilesu/maze_ws/build/maze_robot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ghilesu/maze_ws/build/maze_robot

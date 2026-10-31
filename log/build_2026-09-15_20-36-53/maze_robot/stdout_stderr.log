@@ -1,0 +1,15 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/rviz.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/slam.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/spawn.launch.py
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/urdf/maze_robot.urdf.xacro
+-- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/worlds/maze_world.sdf
+[31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:105 (message):
+  ament_cmake_symlink_install_directory() can't find
+  '/home/ghilesu/maze_ws/src/maze_robot/meshes'
+Call Stack (most recent call first):
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:319 (ament_cmake_symlink_install_directory)
+  cmake_install.cmake:46 (include)
+
+[0m

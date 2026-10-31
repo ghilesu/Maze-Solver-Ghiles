@@ -1,0 +1,47 @@
+[0.014s] Invoking command in '/home/ghilesu/maze_ws/build/maze_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ghilesu/maze_ws/src/maze_robot -DCMAKE_INSTALL_PREFIX=/home/ghilesu/maze_ws/install/maze_robot
+[0.044s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.201s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.212s] -- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.237s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.244s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.253s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.264s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.314s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.316s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.376s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.430s] -- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.453s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.470s] -- Found nav_msgs: 5.3.8 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[0.489s] -- Found ros_gz_sim: 1.0.24 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+[0.642s] -- Configuring done (0.6s)
+[0.647s] -- Generating done (0.0s)
+[0.649s] -- Build files have been written to: /home/ghilesu/maze_ws/build/maze_robot
+[0.655s] Invoked command in '/home/ghilesu/maze_ws/build/maze_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ghilesu/maze_ws/src/maze_robot -DCMAKE_INSTALL_PREFIX=/home/ghilesu/maze_ws/install/maze_robot
+[0.656s] Invoking command in '/home/ghilesu/maze_ws/build/maze_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ghilesu/maze_ws/build/maze_robot -- -j12 -l12
+[0.691s] Invoked command in '/home/ghilesu/maze_ws/build/maze_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ghilesu/maze_ws/build/maze_robot -- -j12 -l12
+[0.699s] Invoking command in '/home/ghilesu/maze_ws/build/maze_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ghilesu/maze_ws/build/maze_robot
+[0.708s] -- Install configuration: ""
+[0.708s] -- Execute custom install script
+[0.709s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/rviz.launch.py
+[0.709s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/slam.launch.py
+[0.709s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/launch/spawn.launch.py
+[0.709s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/urdf/maze_robot.urdf.xacro
+[0.710s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/worlds/maze_world.sdf
+[0.710s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/config/maze_params.yaml
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/config/slam_params.yaml
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/package_run_dependencies/maze_robot
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/parent_prefix_path/maze_robot
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/ament_prefix_path.sh
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/ament_prefix_path.dsv
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/path.sh
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/environment/path.dsv
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.bash
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.sh
+[0.711s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.zsh
+[0.712s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/local_setup.dsv
+[0.712s] -- Symlinking: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/package.dsv
+[0.720s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/ament_index/resource_index/packages/maze_robot
+[0.720s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/cmake/maze_robotConfig.cmake
+[0.720s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/cmake/maze_robotConfig-version.cmake
+[0.720s] -- Up-to-date symlink: /home/ghilesu/maze_ws/install/maze_robot/share/maze_robot/package.xml
+[0.721s] Invoked command in '/home/ghilesu/maze_ws/build/maze_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ghilesu/maze_ws/build/maze_robot
