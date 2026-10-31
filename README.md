@@ -140,7 +140,6 @@ ros2 run maze_robot maze_solver.py
 | **`/map`** | Real-time occupancy grid topic | `nav_msgs/msg/OccupancyGrid` |
 | **`/cmd_vel`** | Velocity command topic for movement | `geometry_msgs/msg/Twist` |
 
----
 
 ## 📜 License & Maintainer
 
