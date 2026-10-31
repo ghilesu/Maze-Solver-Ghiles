@@ -148,23 +148,4 @@ ros2 run maze_robot maze_solver.py
 - **Package Name:** `maze_robot`
 - **ROS 2 Version:** Jazzy Jalisco
 ```
-eof
 
-### How to updating your GitHub Repository on Windows PowerShell:
-
-Run these exact commands in your terminal to save the new `README.md` to your repository:
-
-```powershell
-cd C:\Users\ACER\Downloads\maze-solver-ghiles-ws
-
-# Stage the updated README file
-git add README.md
-
-# Commit the changes
-git commit -m "Update README.md with full ROS 2 project architecture and video link"
-
-# Push the update to GitHub
-git push origin main
-```
-
-Your GitHub repository at `https://github.com/ghilesu/Maze-Solver-Ghiles` now has a complete `README.md` containing all setup instructions, launch commands, topic breakdowns, and an embedded YouTube video thumbnail.
