@@ -147,5 +147,5 @@ ros2 run maze_robot maze_solver.py
 - **Maintainer:** Ghiles (`gmameri69@gmail.com`)
 - **Package Name:** `maze_robot`
 - **ROS 2 Version:** Jazzy Jalisco
-```
+
 
